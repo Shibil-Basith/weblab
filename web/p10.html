@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Else If Ladder Example</title>
+</head>
+<body>
+    <h1>Else If Ladder Example</h1>
+    <p>This is an example demonstrating the use of else-if ladder in JavaScript.</p>
+
+    <script>
+        var userInput = prompt("Enter your marks:");
+
+        var marks = parseFloat(userInput);
+
+        if (!isNaN(marks)) {
+            if (marks >= 90) {
+                document.write("<p>Grade: A</p>");
+            } else if (marks >= 80) {
+                document.write("<p>Grade: B</p>");
+            } else if (marks >= 70) {
+                document.write("<p>Grade: C</p>");
+            } else if (marks >= 60) {
+                document.write("<p>Grade: D</p>");
+            } else {
+                document.write("<p>Grade: F</p>");
+            }
+        } else {
+            document.write("<p>Please enter a valid number for marks.</p>");
+        }
+    </script>
+</body>
+</html>

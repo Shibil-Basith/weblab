@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Odd and Even Numbers</title>
+</head>
+<body>
+
+    <label for="limitInput">Enter the limit:</label>
+    <input type="number" id="limitInput">
+
+    <button onclick="differentiateNumbers()">Differentiate Numbers</button>
+
+    <p id="result"></p>
+
+    <script>
+        function differentiateNumbers() {
+            var limit = parseInt(document.getElementById("limitInput").value);
+            var result = "";
+
+            if (isNaN(limit) || limit <= 0) {
+                result = "Please enter a valid positive integer as the limit.";
+            } else {
+                result = "Odd numbers: ";
+                for (var i = 1; i <= limit; i++) {
+                    if (i % 2 !== 0) {
+                        result += i + " ";
+                    }
+                }
+                result += "<br>Even numbers: ";
+                for (var j = 1; j <= limit; j++) {
+                    if (j % 2 === 0) {
+                        result += j + " ";
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

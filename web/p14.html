@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array Sum</title>
+</head>
+<body>
+
+    <label for="numElementsInput">Enter the number of elements:</label>
+    <input type="number" id="numElementsInput" min="1">
+    <button onclick="getArray()">Enter Elements</button>
+    <p id="sumResult"></p>
+
+    <script>
+        function getArray() {
+            let elements = [];
+            let numElements = parseInt(document.getElementById("numElementsInput").value);
+
+            if (isNaN(numElements) || numElements <= 0) {
+                alert("Please enter a valid number of elements.");
+                return;
+            }
+
+            let sum = 0;
+
+            for (let i = 0; i < numElements; i++) {
+                let element = parseFloat(prompt(`Enter element ${i + 1}:`));
+                if (isNaN(element)) {
+                    alert(`Please enter a valid number for element ${i + 1}.`);
+                    return;
+                }
+                sum += element; // Add current element to sum
+            }
+
+            // Display sum
+            document.getElementById("sumResult").innerText = `Sum of the array elements: ${sum}`;
+        }
+    </script>
+</body>
+</html>
