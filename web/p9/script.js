@@ -1,3 +1,4 @@
-function externalJsFunction() {
-    alert("This is an alert from the external JavaScript function.");
+
+function greet() {
+    alert("Hello from JavaScript function!");
 }
