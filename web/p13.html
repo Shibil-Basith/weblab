@@ -1,50 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fibonacci Series</title>
+  <title>Fibonacci Series</title>
 </head>
 <body>
+  <h1>Fibonacci Series</h1>
+  <label for="number">Enter the number of terms:</label>
+  <input type="number" id="number" name="number">
+  <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
+  <div id="output"></div>
 
-    <label for="limitInput">Enter the limit:</label>
-    <input type="number" id="limitInput">
-
-    <button onclick="printFibonacciSeries()">Print Fibonacci Series</button>
-
-    <p id="fibonacciSeries"></p>
-
-    <script>
-        function printFibonacciSeries() {
-            var limit = parseInt(document.getElementById("limitInput").value);
-            var fibonacciSeries = "";
-
-            if (isNaN(limit) || limit <= 0) {
-                fibonacciSeries = "Please enter a valid positive integer as the limit.";
-            } else {
-                var firstNumber = 0;
-                var secondNumber = 1;
-                
-                fibonacciSeries = "Fibonacci series up to " + limit + ":<br>";
-                fibonacciSeries += firstNumber;
-
-                if (limit > 1) {
-                    fibonacciSeries += ", " + secondNumber;
-                    var currentNumber = firstNumber;
-                    var nextNumber = secondNumber;
-                    var sum;
-
-                    while (nextNumber <= limit) {
-                        sum = currentNumber + nextNumber;
-                        if (sum <= limit) {
-                            fibonacciSeries += ", " + sum;
-                        }
-                        currentNumber = nextNumber;
-                        nextNumber = sum;
-                    }
-                }
-            }
-
-            document.getElementById("fibonacciSeries").innerHTML = fibonacciSeries;
-        }
-    </script>
+  <script src="fibonacci.js"></script>
 </body>
 </html>
