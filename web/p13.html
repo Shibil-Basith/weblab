@@ -10,6 +10,23 @@
   <button onclick="generateFibonacci()">Generate Fibonacci Series</button>
   <div id="output"></div>
 
-  <script src="fibonacci.js"></script>
+  <script>
+    function generateFibonacci() {
+      let n = parseInt(document.getElementById("number").value);
+      if (isNaN(n) || n <= 0) {
+        alert("Please enter a positive integer.");
+        return;
+      }
+      let result = "";
+      let a = 0, b = 1;
+      while (a <= n) {
+        result += a + " ";
+        let sum = a + b;
+        a = b;
+        b = sum;
+      }
+      document.getElementById("output").innerText = "Fibonacci series upto " + n + ":\n" + result;
+    }
+  </script>
 </body>
 </html>
